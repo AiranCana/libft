@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 11:37:00 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/13 13:53:40 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/13 13:51:47 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/13 13:54:58 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int leter)
+int	ft_isalnum(int carac)
 {
-	if ((leter >= 97 && leter <= 122) || (leter >= 65 && leter <= 90))
+	if (carac <= 57 && carac >= 48)
 	{
-		return (1024);
+		return (8);
+	}
+	else if ((carac >= 97 && carac <= 122) || (carac >= 65 && carac <= 90))
+	{
+		return (8);
 	}
 	return (0);
 }

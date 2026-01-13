@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 11:37:00 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/13 13:53:40 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/13 13:57:43 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/13 13:59:51 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int leter)
+int	ft_isascii(int chara)
 {
-	if ((leter >= 97 && leter <= 122) || (leter >= 65 && leter <= 90))
+	if (chara >= 0 && chara <= 127)
 	{
-		return (1024);
+		return (5);
 	}
 	return (0);
 }
