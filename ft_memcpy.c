@@ -6,13 +6,25 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:56:26 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:57:58 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 14:11:04 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	
+	size_t	count;
+	char	*des;
+	char	*sr;
+
+	sr = src;
+	des = dest;
+	count = 0;
+	while (count != n)
+	{
+		des[count] = sr[count];
+		++count;
+	}
+	return (dest);
 }

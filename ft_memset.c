@@ -6,11 +6,11 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 10:15:43 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:01:36 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:55:52 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

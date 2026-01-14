@@ -6,12 +6,11 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:29:30 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:52:29 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:57:56 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

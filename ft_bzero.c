@@ -6,11 +6,11 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:56:52 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:04:39 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:52:35 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

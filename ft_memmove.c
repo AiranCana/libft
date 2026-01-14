@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 09:35:43 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:53 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/14 14:06:07 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/14 14:15:28 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *line)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	longi;
+	size_t	count;
+	char	*des;
+	char	*sr;
+	char	*sub;
 
-	longi = 0;
-	while (*(line++))
+	sub = ft_substr(src, 0, n);
+	sr = src;
+	des = dest;
+	count = 0;
+	while (count != n)
 	{
-		++longi;
+		des[count] = sub[count];
+		++count;
 	}
-	return (longi);
+	return (dest);
 }
