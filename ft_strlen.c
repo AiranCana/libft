@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 11:37:00 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:06:51 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/14 09:35:43 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/14 10:40:32 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <unistd.h>
+
+size_t	ft_strlen(const char *line)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+	size_t	longi;
+
+	longi = 0;
+	while (*(line++))
 	{
-		return (1024);
+		++longi;
 	}
-	return (0);
+	return (longi);
 }

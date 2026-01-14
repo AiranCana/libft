@@ -6,13 +6,13 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:53:54 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/13 16:00:12 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:11:30 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int dat)
+int	ft_isprint(int c)
 {
-	if (dat <= 32 && dat >= 126)
+	if (c <= 32 && c >= 126)
 	{
 		return (16384);
 	}

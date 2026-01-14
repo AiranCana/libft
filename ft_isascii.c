@@ -6,13 +6,13 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:57:43 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/13 15:35:44 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:08:19 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int chara)
+int	ft_isascii(int c)
 {
-	if (chara >= 0 && chara <= 127)
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}

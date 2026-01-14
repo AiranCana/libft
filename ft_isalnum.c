@@ -6,17 +6,17 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:51:47 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/13 13:54:58 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:07:23 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int carac)
+int	ft_isalnum(int c)
 {
-	if (carac <= 57 && carac >= 48)
+	if (c <= 57 && c >= 48)
 	{
 		return (8);
 	}
-	else if ((carac >= 97 && carac <= 122) || (carac >= 65 && carac <= 90))
+	else if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 	{
 		return (8);
 	}
