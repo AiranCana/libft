@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 14:06:07 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/16 14:19:32 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/16 14:15:45 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/16 14:43:31 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	count;
-	char	*des;
-	char	*sr;
-	char	*sub;
+	const char	*g;
 
-	sub = ft_substr(src, 0, n);
-	sr = (char *) src;
-	des = dest;
-	count = 0;
-	while (count != n)
+	g = s;
+	while (*g)
 	{
-		des[count] = sub[count];
-		++count;
+		if (*g = c)
+			return ((char *) g);
 	}
-	return (dest);
+	return (NULL);
 }
