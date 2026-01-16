@@ -6,20 +6,36 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:19:35 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:28:23 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:57:35 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *nptr)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
 	int	num;
+	int	sign;
 
+	sign = 1;
 	num = 0;
-	while (*nptr)
+	while (*nptr == ' ')
+		++nptr;
+	if (0 == ft_isdigit(*nptr))
+	{
+		if (*nptr == '+' || *nptr == '-')
+		{
+			if (*nptr == '-')
+				sign *= -1;
+		}
+		else
+			return (0);
+	}
+	++nptr;
+	while (*nptr && 0 != ft_isdigit(*nptr))
 	{
 		num *= 10;
-		num += (*nptr - 48);
-		nptr++;
+		num += (*(nptr++) - 48);
 	}
-	return (num);
+	return (num * sign);
 }

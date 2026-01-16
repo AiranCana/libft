@@ -6,15 +6,13 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:42:54 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:10:34 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 12:36:47 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
 	if (c <= 57 && c >= 48)
-	{
-		return (2048);
-	}
+		return (1);
 	return (0);
 }

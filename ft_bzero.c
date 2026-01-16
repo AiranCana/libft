@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:56:52 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 13:52:35 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:46:50 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		*iter = '\0';
 		++iter;
 	}
-	return (s);
 }

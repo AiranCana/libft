@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:06:07 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 14:15:28 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:57:34 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*sub;
 
 	sub = ft_substr(src, 0, n);
-	sr = src;
+	sr = (char  *) src;
 	des = dest;
 	count = 0;
 	while (count != n)

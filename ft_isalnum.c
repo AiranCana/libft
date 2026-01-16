@@ -6,19 +6,15 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:51:47 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/14 12:07:23 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 12:35:53 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
 	if (c <= 57 && c >= 48)
-	{
-		return (8);
-	}
+		return (1);
 	else if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-	{
-		return (8);
-	}
+		return (1);
 	return (0);
 }
