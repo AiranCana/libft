@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 14:15:12 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 10:20:33 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/16 16:31:35 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/19 10:20:13 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char	*g;
+	size_t		count;
 
+	count = 0;
 	g = s;
-	while (*g)
+	while (*g && count != n)
 	{
 		if (*g == c)
-			return ((char *)g);
-		--g;
+			return ((void *)g);
+		++g;
+		++count;
 	}
 	return (NULL);
 }

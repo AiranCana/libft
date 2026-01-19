@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 14:15:12 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 10:20:33 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/19 10:43:24 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/19 11:00:06 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	const char	*g;
+	size_t	count;
+	size_t	temp;
+	size_t	lit;
 
-	g = s;
-	while (*g)
+	count = 0;
+	while (*big && len > count)
 	{
-		if (*g == c)
-			return ((char *)g);
-		--g;
+		if (*big == *little)
+		{
+			temp = count;
+			lit = 0;
+			while (little[lit] && little[lit] == big[lit] && len > count)
+			{
+				++lit;
+				++count;
+			}
+			if (!little[lit])
+				return ((char *) big);
+			count = temp;
+		}
+		++big;
+		++count;
 	}
 	return (NULL);
 }

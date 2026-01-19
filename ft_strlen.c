@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:35:43 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/16 10:16:49 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:47:48 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *line)
 {
-	size_t	longi;
+	size_t	len;
 
-	longi = 0;
+	len = 0;
 	while (*(line++))
-		++longi;
-	return (longi);
+		++len;
+	return (len);
 }

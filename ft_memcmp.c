@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 14:15:12 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 10:20:33 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/19 10:22:43 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/19 10:34:56 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*g;
+	size_t		count;
+	const char	*s3;
+	const char	*s4;
 
-	g = s;
-	while (*g)
+	s3 = s1;
+	s4 = s2;
+	count = 0;
+	while (*s3 && *s4 && n != count)
 	{
-		if (*g == c)
-			return ((char *)g);
-		--g;
+		if (*s3 != *s4)
+			return (*s3 - *s4);
+		++s3;
+		++s4;
+		++count;
 	}
-	return (NULL);
+	return (*s3 - *s4);
 }
