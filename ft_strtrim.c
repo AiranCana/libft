@@ -6,19 +6,19 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 13:30:40 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 15:40:44 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/20 12:43:07 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlenlset(char const *s1, char const *set, char *dst)
+static size_t	ft_strlenlset(char const *s1, char const *set, char **dst)
 {
 	size_t	count;
 	int		found;
 	char	*allo;
 
-	allo = dst;
+	allo = dst[0];
 	found = 0;
 	count = 0;
 	while (*s1)
@@ -31,10 +31,8 @@ static size_t	ft_strlenlset(char const *s1, char const *set, char *dst)
 		}
 		if (found)
 		{
-			if (allo != NULL)
-			{
+			if (allo)
 				*(allo++) = *s1;
-			}
 		}
 		++s1;
 	}
@@ -50,6 +48,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	allo = malloc(sizeof (char *) * len);
 	if (!allo)
 		return (NULL);
-	ft_strlenlset(s1, set, allo);
+	ft_strlenlset(s1, set, &allo);
 	return (allo);
 }

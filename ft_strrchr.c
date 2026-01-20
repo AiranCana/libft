@@ -6,11 +6,11 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:15:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 09:58:18 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/20 10:02:26 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -18,12 +18,10 @@ char	*ft_strrchr(const char *s, int c)
 
 	g = s;
 	while (*g)
-		++g;
-	while (g != s)
 	{
 		if (*g == c)
 			return ((char *) g);
-		--g;
+		++g;
 	}
 	return (NULL);
 }
