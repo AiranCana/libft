@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 11:21:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:23 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/21 11:02:35 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/21 11:32:57 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	const char	*sol;
-	char		*dest;
-	size_t		limit;
-	size_t		aux;
+	char	num;
 
-	sol = src;
-	dest = dst;
-	limit = ft_strlen(dst);
-	if (size <= limit)
-		return (size + ft_strlen(src));
-	aux = limit;
-	while (limit--)
-		++dest;
-	limit = aux;
-	while (*src && limit--)
-	{
-		*dest = *src;
-		++dest;
-		++src;
-	}
-	return (ft_strlen(dst) + ft_strlen(sol));
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	num = 48 + (n % 10);
+	write(fd, &num, 1);
 }

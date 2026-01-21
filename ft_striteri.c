@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 11:21:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:23 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/21 10:25:51 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/21 10:43:37 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	const char	*sol;
-	char		*dest;
-	size_t		limit;
-	size_t		aux;
+	unsigned int	pos;
 
-	sol = src;
-	dest = dst;
-	limit = ft_strlen(dst);
-	if (size <= limit)
-		return (size + ft_strlen(src));
-	aux = limit;
-	while (limit--)
-		++dest;
-	limit = aux;
-	while (*src && limit--)
+	pos = 0;
+	while (s[pos])
 	{
-		*dest = *src;
-		++dest;
-		++src;
+		f(pos, &s[pos]);
+		++pos;
 	}
-	return (ft_strlen(dst) + ft_strlen(sol));
 }

@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 11:21:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:23 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/21 10:49:17 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/21 10:53:57 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	const char	*sol;
-	char		*dest;
-	size_t		limit;
-	size_t		aux;
-
-	sol = src;
-	dest = dst;
-	limit = ft_strlen(dst);
-	if (size <= limit)
-		return (size + ft_strlen(src));
-	aux = limit;
-	while (limit--)
-		++dest;
-	limit = aux;
-	while (*src && limit--)
-	{
-		*dest = *src;
-		++dest;
-		++src;
-	}
-	return (ft_strlen(dst) + ft_strlen(sol));
+	write(fd, &c, 1);
 }

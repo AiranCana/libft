@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 11:21:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:23 by acanadil         ###   ########.fr       */
+/*   Created: 2026/01/21 10:31:18 by acanadil          #+#    #+#             */
+/*   Updated: 2026/01/21 10:48:14 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	const char	*sol;
-	char		*dest;
-	size_t		limit;
-	size_t		aux;
+	unsigned int	pos;
+	char			*mod;
 
-	sol = src;
-	dest = dst;
-	limit = ft_strlen(dst);
-	if (size <= limit)
-		return (size + ft_strlen(src));
-	aux = limit;
-	while (limit--)
-		++dest;
-	limit = aux;
-	while (*src && limit--)
+	mod = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	pos = 0;
+	while (s[pos])
 	{
-		*dest = *src;
-		++dest;
-		++src;
+		mod[pos] = f(pos, s[pos]);
+		++pos;
 	}
-	return (ft_strlen(dst) + ft_strlen(sol));
+	mod[pos] = '\0';
+	return (mod);
 }
