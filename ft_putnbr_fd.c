@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 11:02:35 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:32:57 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:10:14 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	num;
 
+	if (n == -2147483648)
+	{
+		wreite(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		n = -n;
+		write(fd, '-', 1);
+	}
 	if (n >= 10)
 		ft_putnbr_fd(n / 10, fd);
 	num = 48 + (n % 10);
