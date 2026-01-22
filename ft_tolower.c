@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:04:39 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/16 14:13:53 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:33:48 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_tolower(int c)
 {
 	if (ft_isalpha(c))
-		if (c < 90)
+		if (c < 91)
 			return (c + 32);
 	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:41:50 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 12:02:08 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:27:31 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,20 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 #endif
+
+/*
+ft_memcmp
+ft_strnstr
+ft_atoi
+ft_calloc
+ft_strdup
+ft_substr
+ft_strjoin
+ft_strtrim
+ft_split
+ft_itoa
+ft_strmapi
+ft_putstr_fd
+ft_putendl_fd
+ft_putnbr_fd
+*/

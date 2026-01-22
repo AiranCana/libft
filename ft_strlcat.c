@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:21:45 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:23 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:59:16 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	const char	*sol;
 	char		*dest;
 	size_t		limit;
-	size_t		aux;
 
 	sol = src;
 	dest = dst;
 	limit = ft_strlen(dst);
 	if (size <= limit)
 		return (size + ft_strlen(src));
-	aux = limit;
-	while (limit--)
-		++dest;
-	limit = aux;
-	while (*src && limit--)
+	while (*dest)
 	{
-		*dest = *src;
 		++dest;
-		++src;
+		--size;
 	}
-	return (ft_strlen(dst) + ft_strlen(sol));
+	while (*src && (size - 1))
+	{
+		*(dest++) = *(src++);
+		--size;
+	}
+	*dest = '\0';
+	return (limit + ft_strlen(sol));
 }

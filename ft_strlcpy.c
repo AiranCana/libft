@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:21:13 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/16 11:43:17 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:14:05 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	count = 0;
 	sol = src;
 	dest = dst;
-	while (src && (size - 1) > count++)
+	if (size <= 0)
+		return (ft_strlen(sol));
+	while (*src && (size - 1) > count++)
 	{
 		*dest = *src;
 		++dest;
