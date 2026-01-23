@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:48:08 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 12:04:13 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/23 11:05:44 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s) + 1;
 	alloc = malloc(sizeof (char) * len);
+	if (!alloc)
+		return (NULL);
 	dest = alloc;
 	while (*s)
 	{

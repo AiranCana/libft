@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:19:35 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/16 10:57:35 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/23 10:55:36 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	num = 0;
-	while (*nptr == ' ')
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
 		++nptr;
 	if (0 == ft_isdigit(*nptr))
 	{
@@ -30,8 +30,8 @@ int	ft_atoi(const char *nptr)
 		}
 		else
 			return (0);
+		++nptr;
 	}
-	++nptr;
 	while (*nptr && 0 != ft_isdigit(*nptr))
 	{
 		num *= 10;

@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:48:11 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/19 15:59:37 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/23 11:44:50 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,16 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*allo;
+	char	*sol;
 
 	allo = malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	sol = allo;
 	if (!allo)
 		return (NULL);
 	while (*s1)
-	{
-		*allo = *s1;
-		++s1;
-		++allo;
-	}
+		*allo++ = *s1++;
 	while (*s2)
-	{
-		*allo = *s2;
-		++s2;
-		++allo;
-	}
+		*allo++ = *s2++;
 	*allo = *s2;
-	return (allo);
+	return (sol);
 }
