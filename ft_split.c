@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/26 12:48:03 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 12:58:26 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static size_t	sclen(char const *s, char c)
 	size_t		counts;
 
 	count = 0;
+	counts = 0;
 	while (s[counts])
 	{
 		if (*s == c)
@@ -69,7 +70,7 @@ static char	**autocoplet(char ***sol, int len)
 	}
 	save = sol[0];
 	save[len] = NULL;
-	sol[0][len] = NULL;
+	sol[0][len +1] = NULL;
 	return (save);
 }
 
