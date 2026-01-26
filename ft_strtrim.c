@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 13:30:40 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/23 13:56:28 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 10:31:28 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ static char	*move(char *s, char const *set)
 	return (save1);
 }
 
-static size_t	lenstarend(char **s1, char const *set)
+static size_t	lenstarend(char *s1, char const *set)
 {
 	char	*save1;
 	char	*saves1;
 
-	save1 = s1[0];
+	save1 = s1;
 	while (*save1 && isfound(*save1, set))
 		++save1;
 	saves1 = save1;
 	while (*save1)
 		++save1;
-	if (!*save1)
+	if (!save1)
 		--save1;
 	while (isfound(*save1, set))
 	{
@@ -60,7 +60,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	count;
 	char	*allo;
 
-	len = lenstarend((char **) &s1, set);
+	len = lenstarend((char *) s1, set);
 	allo = malloc(sizeof (char) * (len + 1));
 	if (!allo)
 		return (NULL);

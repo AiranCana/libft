@@ -6,62 +6,62 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 09:17:36 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/20 11:29:18 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 12:44:42 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static int	numlen(int n)
+// 1 2 3 4 \0
+
+static int	numlen(long n)
 {
 	int	d;
-	int	temp;
 
-	d = 0;
-	temp = n;
 	if (n < 0)
 	{
 		d = 2;
-		temp = -temp;
+		n = -n;
 	}
 	else
 		d = 1;
-	while (temp > 9)
+	while (n > 9)
 	{
-		temp /= 10;
+		n /= 10;
 		++d;
 	}
 	++d;
 	return (d);
 }
 
-static void	numins(int temp, char *dst, int len)
+static void	numins(long temp, char *dst, int len)
 {
-	if (temp > 10)
-		numins((temp / 10), dst, len -1);
-	dst[len] = 48 + (temp % 10);
+	char	c;
+
+	if (temp >= 10)
+		numins((temp / 10), dst - 1, len - 1);
+	c = 48 + (temp % 10);
+	dst[0] = c;
 }
 
 char	*ft_itoa(int n)
 {
 	char	*dst;
-	char	*opp;
+	long	num;
 	int		len;
 
-	len = numlen(n);
+	num = n;
+	len = numlen(num);
 	dst = malloc(sizeof (char) * len);
 	if (!dst)
 		return (NULL);
 	dst[len - 1] = '\0';
-	opp = dst;
-	if (n < 0)
+	if (num < 0)
 	{
-		*(opp++) = '-';
-		n = -n;
+		dst[0] = '-';
+		num = -num;
 	}
-	while (*opp)
-		++opp;
-	--opp;
-	numins(n, opp, len - 2);
+	numins(num, &dst[len - 2], len - 2);
 	return (dst);
 }

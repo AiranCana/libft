@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:56:37 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 10:57:05 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 10:55:58 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

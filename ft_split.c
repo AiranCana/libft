@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/20 15:17:25 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 12:48:03 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,32 @@ static char	*section(char **s, char c)
 		++len;
 		++str;
 	}
-	sol = malloc(sizeof (char) * (len + 1));
+	sol = malloc(sizeof (char) * (len));
 	if (!sol)
 		return (NULL);
 	sol = ft_memset(sol, 'a', (size_t) len);
-	sol[len] = '\0';
+	sol[len - 1] = '\0';
 	save = sol;
 	while (*save)
 		*(save++) = (*(*s)++);
+	(*s)++;
 	return (sol);
 }
 
-static int	sclen(char const *s, char c)
+static size_t	sclen(char const *s, char c)
 {
-	int	count;
+	size_t		count;
+	size_t		counts;
 
-	count = 1;
-	while (*s)
+	count = 0;
+	while (s[counts])
 	{
 		if (*s == c)
 			++count;
-		++s;
+		++counts;
 	}
+	if (ft_strlen(s) == count)
+		return (-2);
 	return (count);
 }
 
@@ -69,7 +73,7 @@ static char	**autocoplet(char ***sol, int len)
 	return (save);
 }
 
-static void	liverty(char ***sol)
+static void	liverity(char ***sol)
 {
 	while (*sol[0])
 	{
@@ -81,15 +85,14 @@ static void	liverty(char ***sol)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**save;
-	char	**sol;
-	char	*strsub;
-	char	*str;
-	int		len;
+	char		**save;
+	char		**sol;
+	char		*strsub;
+	char		*str;
+	size_t		len;
 
-	str = (char *) s;
 	len = sclen(s, c);
-	sol = malloc(sizeof (char *) * (len + 1));
+	sol = malloc(sizeof (char *) * (len + 2));
 	if (!sol)
 		return (NULL);
 	save = autocoplet(&sol, len);
@@ -98,7 +101,7 @@ char	**ft_split(char const *s, char c)
 		strsub = section(&str, c);
 		if (!strsub)
 		{
-			liverty(&save);
+			liverity(&save);
 			return (NULL);
 		}
 		*save = strsub;

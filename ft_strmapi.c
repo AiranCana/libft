@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:31:18 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/21 10:48:14 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/26 10:59:37 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*mod;
 
 	mod = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!mod)
+		return (NULL);
 	pos = 0;
 	while (s[pos])
 	{
