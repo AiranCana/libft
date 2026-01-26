@@ -34,12 +34,15 @@ ft_strtrim.c \
 ft_substr.c \
 ft_tolower.c \
 ft_toupper.c
-OBJ = $(@SOURCE:.c=.o)
+OBJ = $(SOURCE:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
+
+%.o: %.c
+	@cc -c $(CFLAGS) $< -o $@ 
 
 clean:
 	@rm -rf $(OBJ)
