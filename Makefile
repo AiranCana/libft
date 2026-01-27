@@ -8,8 +8,8 @@ ft_lstlast.c \
 ft_lstadd_back.c \
 ft_lstdelone.c \
 ft_lstclear.c \
-ft_lstiter.c #\
-#ft_lstmap.c
+ft_lstiter.c \
+ft_lstmap.c
 
 SOURCE=ft_atoi.c \
 ft_bzero.c \
@@ -52,8 +52,8 @@ ft_lstlast.c \
 ft_lstadd_back.c \
 ft_lstdelone.c \
 ft_lstclear.c \
-ft_lstiter.c #\
-#ft_lstmap.c
+ft_lstiter.c \
+ft_lstmap.c
 OBJ = $(SOURCE:.c=.o)
 OBJBON = $(SOURCEBONUS:.c=.o)
 
