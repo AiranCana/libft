@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/28 21:48:05 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/28 22:00:23 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	release(char **sol, size_t len)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (len > i)
 	{
@@ -39,7 +39,7 @@ static void	spliter(char *str, char c, int sections, char **sol)
 		while (str[j] && str[j] != c)
 			j++;
 		sol[i] = ft_substr(str, 0, j);
-		if(!sol[i])
+		if (!sol[i])
 		{
 			release(sol, i);
 			return ;
@@ -49,12 +49,13 @@ static void	spliter(char *str, char c, int sections, char **sol)
 		str = &str[j];
 		i++;
 	}
+	sol[i] = NULL;
 }
 
 static int	countleter(char const *s, char c)
 {
 	int		count;
-	int			i;
+	int		i;
 
 	count = 0;
 	i = 0;
@@ -81,12 +82,12 @@ char	**ft_split(char const *s, char c)
 	leter[0] = c;
 	leter[1] = '\0';
 	if (!s)
-		return (NULL);
+		return (malloc(sizeof (char *)));
 	str = ft_strtrim(s, leter);
 	if (!str)
-		return (NULL);
+		return (malloc(sizeof (char *)));
 	sections = countleter(s, c);
-	sol = malloc((sections + 1) * sizeof (char *));
+	sol = ft_calloc((sections + 1), sizeof (char *));
 	if (sol)
 		spliter(str, c, sections, sol);
 	free(str);
