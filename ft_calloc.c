@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:48:06 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/23 11:01:33 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:57:38 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (!nmemb || !size)
 	{
-		allo = malloc(0);
-		if (!allo)
-			return (NULL);
-		else
-			return (allo);
+		return (malloc(0));
 	}
 	allo = malloc(nmemb * size);
 	if (!allo)
