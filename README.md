@@ -25,9 +25,8 @@ Tu repositorio debe incluir al menos:
 
 Reimplementa funciones estándar como:
 
-	`isalpha`		`bzero`			`strchr`
-	`isdigit`		`memcpy`		`strrchr`
-	`isalnum`		`memmove`		`strncmp`
+	`isalpha`		`bzero`			`strchr`<br>`isdigit`		`memcpy`		`strrchr`
+<br>	`isalnum`		`memmove`		`strncmp`
 	`isascii`		`strlcpy`		`memchr`
 	`isprint`		`strlcat`		`memcmp`
 	`strlen`		`toupper`		`memset`
