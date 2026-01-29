@@ -24,14 +24,14 @@ Tu repositorio debe incluir al menos:
 ### 🔹 Parte 1 — Funciones de libc
 
 Reimplementa funciones estándar como:
-
-	`isalpha`		`bzero`			`strchr`<br>`isdigit`		`memcpy`		`strrchr`
+<br>	`isalpha`		`bzero`			`strchr`
+<br>	`isdigit`		`memcpy`		`strrchr`
 <br>	`isalnum`		`memmove`		`strncmp`
-	`isascii`		`strlcpy`		`memchr`
-	`isprint`		`strlcat`		`memcmp`
-	`strlen`		`toupper`		`memset`
-	`strnstr`		`tolower`		`atoi`
-			`calloc`		`strdup`
+<br>	`isascii`		`strlcpy`		`memchr`
+<br>	`isprint`		`strlcat`		`memcmp`
+<br>	`strlen`		`toupper`		`memset`
+<br>	`strnstr`		`tolower`		`atoi`
+<br>			`calloc`		`strdup`
 
 Todas deben respetar los prototipos y comportamientos de la libc original, con el prefijo `ft_`.
 
