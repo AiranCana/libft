@@ -1,2 +1,3 @@
+# Libft
 _Este proyecto ha sido creado como
-parte del currículo de 42 por <acanadil>_
+parte del currículo de 42 por acanadil_
