@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/29 10:34:04 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:18:32 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static int	countleter(char const *s, char c)
 
 	count = 0;
 	i = 0;
+	if (!s[i])
+		return (0);
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -87,6 +89,11 @@ char	**ft_split(char const *s, char c)
 	if (!str)
 		return (malloc(sizeof (char *)));
 	sections = countleter(str, c);
+	if (!sections)
+	{
+		free(str);
+		return (ft_calloc(sizeof (char *), 1));
+	}
 	sol = ft_calloc((sections + 1), sizeof (char *));
 	if (sol)
 		spliter(str, c, sections, sol);

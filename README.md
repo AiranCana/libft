@@ -21,18 +21,22 @@ Tu repositorio debe incluir al menos:
 
 ### 🧠 Funciones a implementar
 
-#### 🔹 Parte 1 — Funciones de libc
+### 🔹 Parte 1 — Funciones de libc
 
 Reimplementa funciones estándar como:
 
-- `ft_strlen`, `ft_memset`, `ft_bzero`, `ft_memcpy`
-- `ft_strlcpy`, `ft_strlcat`
-- Clasificación de caracteres: `ft_isalpha`, `ft_isdigit`, etc.
-- Otras funciones básicas (`ft_atoi`, `ft_strncmp`, …)
+	'isalpha'		'bzero'			'strchr'
+	'isdigit'		'memcpy'		'strrchr'
+	'isalnum'		'memmove'		'strncmp'
+	'isascii'		'strlcpy'		'memchr'
+	'isprint'		'strlcat'		'memcmp'
+	'strlen'		'toupper'		'memset'
+	'strnstr'		'tolower'		'atoi'
+			'calloc'		'strdup'
 
 Todas deben respetar los prototipos y comportamientos de la libc original, con el prefijo `ft_`.
 
-#### 🔹 Parte 2 — Funciones adicionales
+### 🔹 Parte 2 — Funciones adicionales
 
 Funciones útiles como:
 
@@ -40,9 +44,9 @@ Funciones útiles como:
 - `ft_strjoin`
 - `ft_split`
 - `ft_itoa`
-- `ft_strmapi`, …
+- `ft_strmapi`,
 
-#### 🔹 Parte 3 — Listas enlazadas
+### 🔹 Parte 3 — Listas enlazadas
 
 Implementa y prueba funciones para manejar listas:
 
@@ -59,4 +63,4 @@ Implementa y prueba funciones para manejar listas:
 Ejecuta:
 
 ```sh
-make
+make 
