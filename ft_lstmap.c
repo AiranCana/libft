@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:33:16 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/28 10:39:18 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:43:37 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ static int	iscreate(t_list *lst, void *(*f)(void *), t_list **list)
 
 	while (lst)
 	{
-		aux = ft_lstnew(f(lst -> content));
+		aux = ft_lstnew(NULL);
 		if (!aux)
 			return (1);
+		aux -> content = f(lst -> content);
 		ft_lstadd_back(list, aux);
 		lst = lst -> next;
 	}

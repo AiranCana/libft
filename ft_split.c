@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/29 11:18:32 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:08:18 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 static void	release(char **sol, size_t len)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (len > i)
-	{
-		free(sol[i]);
-		i++;
-	}
+	i = len;
+	while (i >= 0)
+		free(sol[i--]);
 	free(sol);
 }
 
-static void	spliter(char *str, char c, int sections, char **sol)
+static int	spliter(char *str, char c, int sections, char **sol)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (!(sections > 0 && *str))
-		return ;
 	while (sections > i)
 	{
 		j = 0;
@@ -42,7 +37,7 @@ static void	spliter(char *str, char c, int sections, char **sol)
 		if (!sol[i])
 		{
 			release(sol, i);
-			return ;
+			return (0);
 		}
 		while (str[j] && str[j] == c)
 			j++;
@@ -50,6 +45,7 @@ static void	spliter(char *str, char c, int sections, char **sol)
 		i++;
 	}
 	sol[i] = NULL;
+	return (1);
 }
 
 static int	countleter(char const *s, char c)
@@ -59,7 +55,7 @@ static int	countleter(char const *s, char c)
 
 	count = 0;
 	i = 0;
-	if (!s[i])
+	if (!s || !s[i])
 		return (0);
 	while (s[i])
 	{
@@ -74,6 +70,17 @@ static int	countleter(char const *s, char c)
 	return (++count);
 }
 
+static char	**returned(char *str, char **ret)
+{
+	if (!str && ret)
+	{
+		free(ret);
+		ret = NULL;
+	}
+	free(str);
+	return (ret);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		sections;
@@ -83,20 +90,35 @@ char	**ft_split(char const *s, char c)
 
 	leter[0] = c;
 	leter[1] = '\0';
-	if (!s)
-		return (malloc(sizeof (char *)));
 	str = ft_strtrim(s, leter);
-	if (!str)
-		return (malloc(sizeof (char *)));
 	sections = countleter(str, c);
 	if (!sections)
-	{
-		free(str);
-		return (ft_calloc(sizeof (char *), 1));
-	}
+		return (returned(str, ft_calloc(sizeof (char *), 1)));
 	sol = ft_calloc((sections + 1), sizeof (char *));
 	if (sol)
-		spliter(str, c, sections, sol);
+	{
+		if (!spliter(str, c, sections, sol))
+			return (returned(str, NULL));
+	}
 	free(str);
 	return (sol);
 }
+
+/*int	main(void)
+{
+	char	**cal;
+	int		i;
+
+	i = 0;
+	cal = ft_split("hello!", ' ');
+	if (!cal)
+		return (0);
+	while (cal[i])
+	{
+		printf("%s\n", cal[i]);
+		free(cal[i++]);
+	}
+	free(cal);
+	return (0);
+}
+*/

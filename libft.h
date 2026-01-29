@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:41:50 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/28 10:41:37 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:40:18 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-
 # include <unistd.h>
 # include <stdio.h>
 # include <stddef.h>
