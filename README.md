@@ -25,14 +25,14 @@ Tu repositorio debe incluir al menos:
 
 Reimplementa funciones estándar como:
 
-	'isalpha'		'bzero'			'strchr'
-	'isdigit'		'memcpy'		'strrchr'
-	'isalnum'		'memmove'		'strncmp'
-	'isascii'		'strlcpy'		'memchr'
-	'isprint'		'strlcat'		'memcmp'
-	'strlen'		'toupper'		'memset'
-	'strnstr'		'tolower'		'atoi'
-			'calloc'		'strdup'
+	`isalpha`		`bzero`			`strchr`
+	`isdigit`		`memcpy`		`strrchr`
+	`isalnum`		`memmove`		`strncmp`
+	`isascii`		`strlcpy`		`memchr`
+	`isprint`		`strlcat`		`memcmp`
+	`strlen`		`toupper`		`memset`
+	`strnstr`		`tolower`		`atoi`
+			`calloc`		`strdup`
 
 Todas deben respetar los prototipos y comportamientos de la libc original, con el prefijo `ft_`.
 
