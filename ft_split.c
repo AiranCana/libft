@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/28 22:00:23 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/01/29 10:34:04 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,26 +86,10 @@ char	**ft_split(char const *s, char c)
 	str = ft_strtrim(s, leter);
 	if (!str)
 		return (malloc(sizeof (char *)));
-	sections = countleter(s, c);
+	sections = countleter(str, c);
 	sol = ft_calloc((sections + 1), sizeof (char *));
 	if (sol)
 		spliter(str, c, sections, sol);
 	free(str);
 	return (sol);
 }
-/*
-int	main(void)
-{
-	char	**hola;
-
-	hola = ft_split("hola como estas", ' ');
-	while (*hola)
-	{
-		printf("\n%s", *hola);
-		free(*hola);
-		hola++;
-	}
-	free(hola);
-	return (0);
-}
-*/
