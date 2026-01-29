@@ -21,34 +21,29 @@ Tu repositorio debe incluir al menos:
 
 ### 🧠 Funciones a implementar
 
-### 🔹 Parte 1 — Funciones de libc
+### 🔹 Funciones de libc
 
 Reimplementa funciones estándar como:
 
-<pre>
-`isalpha`&nbsp;`bzero`&nbsp;`strchr`
-<br>	`isdigit`&nbsp;`memcpy`&nbsp;`strrchr`
-<br>	`isalnum`&nbsp;`memmove`&nbsp;`strncmp`
-<br>	`isascii`&nbsp;`strlcpy`&nbsp;`memchr`
-<br>	`isprint`&nbsp;`strlcat`&nbsp;`memcmp`
-<br>	`strlen`&nbsp;`toupper`&nbsp;`memset`
-<br>	`strnstr`&nbsp;`tolower`&nbsp;`atoi`
-<br>	&nbsp;`calloc`&nbsp;`strdup`
-</pre>
+- Funciones de clasificación de caracteres: `isalpha` `isdigit` `isalnum` `isascii` `isprint`
+- Funciones de strings: `strlen` `strchr` `strrchr` `strnstr` `strncmp` `strlcpy` `strlcat`
+- Funciones de memoria: `bzero` `memset` `memcpy` `memmove` `memchr` `memcmp`
+- Conversión de caracteres: `toupper` `tolower`
+- Asignación de memoria: `calloc` `strdup`
+- Conversión de tipos: `atoi`
 
 Todas deben respetar los prototipos y comportamientos de la libc original, con el prefijo `ft_`.
 
-### 🔹 Parte 2 — Funciones adicionales
+### 🔹 Funciones adicionales
 
 Funciones útiles como:
 
-- `ft_substr`
-- `ft_strjoin`
-- `ft_split`
-- `ft_itoa`
-- `ft_strmapi`,
+- Escritura en file descriptors: `ft_putchar_fd` `ft_putstr_fd` `ft_putendl_fd` `ft_putnbr_fd`
+- Manipulación de strings: `ft_substr` `ft_strjoin` `ft_strtrim` `ft_split`
+- Iteración sobre strings con funciones: `ft_strmapi` `ft_striteri`
+- Conversión  de tipos: `ft_itoa`
 
-### 🔹 Parte 3 — Listas enlazadas
+### 🔹 Listas enlazadas
 
 Implementa y prueba funciones para manejar listas:
 
