@@ -6,7 +6,7 @@
 /*   By: acanadil <acanadil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:59:55 by acanadil          #+#    #+#             */
-/*   Updated: 2026/01/29 16:08:18 by acanadil         ###   ########.fr       */
+/*   Updated: 2026/02/02 15:24:07 by acanadil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ static char	**returned(char *str, char **ret)
 		free(ret);
 		ret = NULL;
 	}
-	free(str);
+	if (str)
+		free(str);
 	return (ret);
 }
 

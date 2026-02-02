@@ -48,7 +48,7 @@ OBJ = $(SOURCE:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) bonus
+$(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
